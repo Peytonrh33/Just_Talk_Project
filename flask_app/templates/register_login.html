@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body style="background-color: #242424;">
+    <div class="container-sm" style="display: flex; justify-content: space-around; margin-top: 40px;">
+        <div class="col-md-" style="color: #bfbfbf;">
+            <form action="/user/register" method="post">
+                <h1>Register</h1>
+                <!-- This is the shortened version for the flashes in !!!!!! -->
+                {% for message in get_flashed_messages() %}
+                    <p>{{message}}</p>
+                {% endfor %}
+                <br>
+                <label for="Username" class="form-label">Username</label>
+                <input id="Username" name="username" class="form-control" value="{{random_username}}">
+                <a href="/login/register" class="btn btn-outline-primary">Random Username</a>
+                <br>
+                <label for="name" class="form-label">Name</label>
+                <input id="name" name="name" class="form-control">
+                <br>
+                <label for="email" class="form-label">Email</label>
+                <input id="email" name="email" class="form-control">
+                <br>
+                <label for="Pass" class="form-label">Password</label>
+                <input id="Pass" name="password" class="form-control">
+                <br>
+                <label for="Confirm" class="form-label">Confirm Password</label>
+                <input id="Confirm" class="form-control" name="confirm_password">
+                <br>
+                <button type="submit" class="btn btn-outline-primary">Register</button>
+
+            </form>
+            
+        </div>
+
+        <div class="col-md-" style="color: #bfbfbf;">
+            <form action="/login" method="post">
+                <h1>Login</h1>
+                <br>
+                <label for="fname" class="form-label">Email</label>
+                <input id="fname" name="email" class="form-control">
+                <br>
+                <label for="lname" class="form-label">Password</label>
+                <input id="lname" name="password" class="form-control">
+                <br>
+                <button class="btn btn-outline-primary">Login</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
